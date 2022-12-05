@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+html { font-family: "Inter", "system-ui"; }
+
+h2 {
+  color: green;
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 700;
+}
+
+
+

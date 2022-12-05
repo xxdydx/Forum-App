@@ -13,12 +13,17 @@ const notifSlice = createSlice({
 
 export const { createNotification } = notifSlice.actions;
 
+let timeoutId = null;
+
 export const setNotification = (message, time) => {
   return async (dispatch) => {
     dispatch(createNotification(message));
-    setTimeout(() => {
-      dispatch(createNotification(null));
-    }, time);
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(() => dispatch(createNotification(null)), time);
   };
 };
 
