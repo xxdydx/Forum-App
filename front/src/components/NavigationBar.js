@@ -29,46 +29,31 @@ const NavigationBar = ({ user }) => {
         <img
           src="https://flowbite.com/docs/images/logo.svg"
           className="mr-3 h-6 sm:h-9"
-          alt="Logo"
+          alt="Flowbite Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Blogger
         </span>
       </Navbar.Brand>
-      <div className="flex md:order-last space-x-6 ">
-        <Dropdown
-          arrowIcon={false}
-          inline={true}
-          label={
-            <Avatar
-              alt="User settings"
-              img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-              rounded={true}
-            />
-          }
-        >
-          <Dropdown.Header>
-            <span className="block text-sm">{user.name}</span>
-            <span className="block truncate text-sm font-medium">
-              Junior Member
-            </span>
-          </Dropdown.Header>
-          <Dropdown.Item>My Blogs</Dropdown.Item>
-          <Dropdown.Item>Other Users</Dropdown.Item>
-          <Dropdown.Divider />
-          <div onClick={logout}>
-            <Dropdown.Item>Sign out</Dropdown.Item>
-          </div>
-        </Dropdown>
-
-        <Navbar.Toggle />
-      </div>
-
+      <Navbar.Toggle />
       <Navbar.Collapse>
         <Navbar.Link href="/about">About</Navbar.Link>
         <Navbar.Link href="/create">Create a Blog</Navbar.Link>
         <Navbar.Link href="/blogs">Other Blogs</Navbar.Link>
-        <Navbar.Link href="/contact">Contact</Navbar.Link>
+        {user === null && (
+          <Navbar.Link className="font-bold dark:text-white" href="/login">
+            Log In
+          </Navbar.Link>
+        )}
+        {user && (
+          <Navbar.Link
+            className="font-bold dark:text-sky-400"
+            onClick={logout}
+            href=""
+          >
+            Log Out
+          </Navbar.Link>
+        )}
       </Navbar.Collapse>
     </Navbar>
   );

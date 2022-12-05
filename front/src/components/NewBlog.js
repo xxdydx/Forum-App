@@ -46,8 +46,8 @@ const NewBlog = () => {
   };
 
   return (
-    <section class="bg-white dark:bg-gray-900 h-screen">
-      <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+    <section class="bg-white dark:bg-gray-900 ">
+      <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16 flex-grow">
         <h2 class="mb-4 text-3xl font-extrabold	text-gray-900 dark:text-white ">
           Create New Blog
         </h2>

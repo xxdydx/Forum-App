@@ -10,7 +10,7 @@ const BlogList = (user) => {
   const blogs1 = [...blogs];
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <h2>blogs</h2>
 
       <br />

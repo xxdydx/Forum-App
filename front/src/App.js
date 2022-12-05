@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { initializeBlogs } from "./reducers/blogReducer";
 import { initializeUsers, setUser } from "./reducers/userReducer";
 import BlogList from "./components/BlogList";
-import { Spinner } from "flowbite-react";
+import { Spinner, Footer } from "flowbite-react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -54,24 +54,37 @@ const App = () => {
   };
 
   return (
-    <div className="dark">
-      {user === null ? (
-        <SignIn />
-      ) : (
-        <div>
-          <NavigationBar user={user} />
+    <div className="dark flex flex-col min-h-screen">
+      <div>
+        {user === null ? (
+          <SignIn />
+        ) : (
+          <div>
+            <NavigationBar user={user} />
 
-          <Routes>
-            <Route path="/create" element={<NewBlog />} />
-            <Route
-              path="/"
-              element={<BlogList user={user} setUser={setUser} />}
-            />
-            <Route path="/blogs/:id" element={<BlogView blog={blog} />} />
-          </Routes>
-        </div>
-      )}
-      <Notif />
+            <Routes>
+              <Route path="/create" element={<NewBlog />} />
+              <Route
+                path="/"
+                element={<BlogList user={user} setUser={setUser} />}
+              />
+              <Route path="/blogs/:id" element={<BlogView blog={blog} />} />
+            </Routes>
+          </div>
+        )}
+        <Notif />
+      </div>
+      <footer className="bg-white dark:bg-gray-900 ">
+        <Footer id="footer" container={true}>
+          <Footer.Copyright href="#" by="Flowbite™" year={2022} />
+          <Footer.LinkGroup>
+            <Footer.Link href="#">About</Footer.Link>
+            <Footer.Link href="#">Privacy Policy</Footer.Link>
+            <Footer.Link href="#">Licensing</Footer.Link>
+            <Footer.Link href="#">Contact</Footer.Link>
+          </Footer.LinkGroup>
+        </Footer>
+      </footer>
     </div>
   );
 };
