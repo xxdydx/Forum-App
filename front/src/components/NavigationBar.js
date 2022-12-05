@@ -1,4 +1,16 @@
-import { Navbar, Dropdown, Avatar, Button } from "flowbite-react";
+import React from "react";
+import { useState } from "react";
+import {
+  Navbar,
+  Dropdown,
+  Avatar,
+  Button,
+  Modal,
+  Label,
+  Textarea,
+  TextInput,
+  Checkbox,
+} from "flowbite-react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../reducers/userReducer";
 import { Add } from "@mui/icons-material";
@@ -10,6 +22,7 @@ const NavigationBar = ({ user }) => {
     window.localStorage.removeItem("AKAppSessionID");
     dispatch(setUser(null));
   };
+
   return (
     <Navbar fluid={true}>
       <Navbar.Brand href="/">
@@ -23,13 +36,6 @@ const NavigationBar = ({ user }) => {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-last space-x-6 ">
-        <div>
-          <Button href="/create">
-            <Add className="mr-2 h-5 w-5" />
-            Create Blog
-          </Button>
-        </div>
-
         <Dropdown
           arrowIcon={false}
           inline={true}
@@ -50,10 +56,11 @@ const NavigationBar = ({ user }) => {
           <Dropdown.Item>My Blogs</Dropdown.Item>
           <Dropdown.Item>Other Users</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item>
-            <div onClick={logout}>Sign out</div>
-          </Dropdown.Item>
+          <div onClick={logout}>
+            <Dropdown.Item>Sign out</Dropdown.Item>
+          </div>
         </Dropdown>
+
         <Navbar.Toggle />
       </div>
 

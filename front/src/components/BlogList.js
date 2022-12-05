@@ -9,8 +9,6 @@ const BlogList = (user) => {
   const blogs = useSelector((state) => state.blogs);
   const blogs1 = [...blogs];
 
-  console.log(blogs1);
-
   return (
     <div>
       <h2>blogs</h2>

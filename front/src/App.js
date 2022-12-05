@@ -54,9 +54,9 @@ const App = () => {
   };
 
   return (
-    <div class="dark">
+    <div className="dark">
       {user === null ? (
-        SignIn()
+        <SignIn />
       ) : (
         <div>
           <NavigationBar user={user} />

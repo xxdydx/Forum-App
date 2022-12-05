@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createBlog } from "../reducers/blogReducer";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { setNotification } from "../reducers/notificationReducer";
 import { TextInput, Label, Button, Textarea } from "flowbite-react";
 
@@ -9,6 +10,8 @@ const NewBlog = () => {
   const [newTitle, setNewTitle] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
   const [newUrl, setNewUrl] = useState("");
+
+  const navigate = useNavigate();
 
   const addBlog = (event) => {
     event.preventDefault();
@@ -30,6 +33,8 @@ const NewBlog = () => {
         type: "success",
       };
       dispatch(createBlog(blogObject));
+      navigate("/");
+
       dispatch(setNotification(notif1, 2500));
     } catch (exception) {
       const notif2 = {
