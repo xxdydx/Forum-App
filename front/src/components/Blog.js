@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setNotification } from "../reducers/notificationReducer";
 import { updateBlog, deleteBlog } from "../reducers/blogReducer";
+import { Link } from "react-router-dom";
 
 const Blog = ({ blog }) => {
   const user = useSelector((state) => state.users);
@@ -51,7 +52,7 @@ const Blog = ({ blog }) => {
 
   return (
     <div style={blogStyle}>
-      {blog.title} {blog.author}{" "}
+      <Link to={`/blogs/${blog.id}`}>{blog.title}</Link> {blog.author}{" "}
       <button onClick={() => setView(!view)}>{buttonText}</button>
       {view ? (
         <div>

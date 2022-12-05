@@ -6,24 +6,15 @@ import Togglable from "./Togglable";
 import NewBlog from "./NewBlog";
 
 const BlogList = (user) => {
-  const dispatch = useDispatch();
-  const logout = (event) => {
-    event.preventDefault();
-    window.localStorage.removeItem("AKAppSessionID");
-    dispatch(setUser(null));
-  };
   const blogs = useSelector((state) => state.blogs);
   const blogs1 = [...blogs];
-  const blogFormRef = useRef();
+
   console.log(blogs1);
 
   return (
     <div>
       <h2>blogs</h2>
-      <button onClick={logout}>logout</button>
-      <Togglable buttonLabel="create" ref={blogFormRef}>
-        <NewBlog />
-      </Togglable>
+
       <br />
 
       {blogs1
