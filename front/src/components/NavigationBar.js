@@ -14,13 +14,17 @@ import {
 import { useDispatch } from "react-redux";
 import { setUser } from "../reducers/userReducer";
 import { Add } from "@mui/icons-material";
+import LoginModal from "./LoginModal";
+import { useNavigate } from "react-router-dom";
 
 const NavigationBar = ({ user }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const logout = (event) => {
     event.preventDefault();
     window.localStorage.removeItem("AKAppSessionID");
     dispatch(setUser(null));
+    navigate("/");
   };
 
   return (
@@ -38,7 +42,9 @@ const NavigationBar = ({ user }) => {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <Navbar.Link href="/about">About</Navbar.Link>
-        <Navbar.Link href="/create">Create a Blog</Navbar.Link>
+        {user === null && <Navbar.Link href="/login">Create Post</Navbar.Link>}
+        {user && <Navbar.Link href="/create">Create Post</Navbar.Link>}
+
         <Navbar.Link href="/blogs">Other Blogs</Navbar.Link>
         {user === null && (
           <Navbar.Link className="font-bold dark:text-white" href="/login">

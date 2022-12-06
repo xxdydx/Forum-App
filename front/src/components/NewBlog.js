@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setNotification } from "../reducers/notificationReducer";
 import { TextInput, Label, Button, Textarea } from "flowbite-react";
+import BlogFooter from "./BlogFooter";
 
 const NewBlog = () => {
   const dispatch = useDispatch();
@@ -46,53 +47,56 @@ const NewBlog = () => {
   };
 
   return (
-    <section class="bg-white dark:bg-gray-900 ">
-      <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16 flex-grow">
-        <h2 class="mb-4 text-3xl font-extrabold	text-gray-900 dark:text-white ">
-          Create New Blog
-        </h2>
-        <form onSubmit={addBlog} className="flex flex-col gap-4">
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="post-title" value="Title of Post" />
+    <>
+      <section class="bg-white dark:bg-gray-900 pb-16  ">
+        <div class="py-12 px-4 mx-auto max-w-2xl lg:py-20 ">
+          <h2 class="mb-4 text-3xl font-black		text-gray-900 dark:text-white ">
+            Create New Blog
+          </h2>
+          <form onSubmit={addBlog} className="flex flex-col gap-4">
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="post-title" value="Title of Post" />
+              </div>
+              <TextInput
+                id="post-title"
+                type="text"
+                placeholder="An Amazing Post"
+                required={true}
+                value={newTitle}
+                onChange={({ target }) => setNewTitle(target.value)}
+              />
             </div>
-            <TextInput
-              id="post-title"
-              type="text"
-              placeholder="An Amazing Post"
-              required={true}
-              value={newTitle}
-              onChange={({ target }) => setNewTitle(target.value)}
-            />
-          </div>
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="post-content" value="Content of post" />
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="post-content" value="Author of Post" />
+              </div>
+              <Textarea
+                required={true}
+                value={newAuthor}
+                onChange={({ target }) => setNewAuthor(target.value)}
+                rows={10}
+              />
             </div>
-            <Textarea
-              required={true}
-              value={newAuthor}
-              onChange={({ target }) => setNewAuthor(target.value)}
-              rows={10}
-            />
-          </div>
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="post-url" value="URL of post" />
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="post-url" value="URL of Post" />
+              </div>
+              <TextInput
+                id="post-url"
+                type="url"
+                required={true}
+                value={newUrl}
+                onChange={({ target }) => setNewUrl(target.value)}
+              />
             </div>
-            <TextInput
-              id="post-url"
-              type="url"
-              required={true}
-              value={newUrl}
-              onChange={({ target }) => setNewUrl(target.value)}
-            />
-          </div>
 
-          <Button type="submit">Submit</Button>
-        </form>
-      </div>
-    </section>
+            <Button type="submit">Submit</Button>
+          </form>
+        </div>
+      </section>
+      <BlogFooter />
+    </>
   );
 };
 
