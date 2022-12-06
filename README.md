@@ -20,6 +20,7 @@ A simple forum app. My first foray into full-stack web development using the MER
 
 - Fix up some user interfaces (I have trouble with CSS :/)
 - Dockerfile and automated CI/CD
+- Markdown support for posts
 - Abilty to like and unlike posts (user-unique likes, it's currently anonymous now)
 - User-based commenting
 - Better and more secure user authentication

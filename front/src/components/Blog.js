@@ -52,7 +52,7 @@ const Blog = ({ blog }) => {
 
   return (
     <div style={blogStyle}>
-      <Link to={`/blogs/${blog.id}`}>{blog.title}</Link> {blog.content}{" "}
+      <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>{" "}
       <button onClick={() => setView(!view)}>{buttonText}</button>
       {view ? (
         <div>
