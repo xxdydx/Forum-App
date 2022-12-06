@@ -9,7 +9,7 @@ import BlogFooter from "./BlogFooter";
 const NewBlog = () => {
   const dispatch = useDispatch();
   const [newTitle, setNewTitle] = useState("");
-  const [newAuthor, setNewAuthor] = useState("");
+  const [newContent, setNewContent] = useState("");
   const [newUrl, setNewUrl] = useState("");
 
   const navigate = useNavigate();
@@ -18,11 +18,11 @@ const NewBlog = () => {
     event.preventDefault();
     const blogObject = {
       title: newTitle,
-      author: newAuthor,
+      content: newContent,
       url: newUrl,
     };
     addNewBlog(blogObject);
-    setNewAuthor("");
+    setNewContent("");
     setNewTitle("");
     setNewUrl("");
   };
@@ -69,12 +69,12 @@ const NewBlog = () => {
             </div>
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="post-content" value="Author of Post" />
+                <Label htmlFor="post-content" value="Content of Post" />
               </div>
               <Textarea
                 required={true}
-                value={newAuthor}
-                onChange={({ target }) => setNewAuthor(target.value)}
+                value={newContent}
+                onChange={({ target }) => setNewContent(target.value)}
                 rows={10}
               />
             </div>
