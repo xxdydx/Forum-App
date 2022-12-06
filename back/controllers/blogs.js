@@ -34,6 +34,9 @@ blogRouter.post("/", async (request, response, next) => {
   if (!body.likes) {
     body.likes = 0;
   }
+  if (!body.comments) {
+    body.comments = [];
+  }
   if (!body.title) {
     return response.status(400).json({
       error: "title is required",
@@ -123,6 +126,21 @@ blogRouter.put("/:id", async (request, response, next) => {
   } catch (exception) {
     next(exception);
   }
+});
+blogRouter.post("/:id/comments", async (request, response) => {
+  const { comment } = request.body;
+  const blog = await Blog.findById(request.params.id).populate("user", {
+    username: 1,
+    name: 1,
+  });
+
+  blog.comments = blog.comments.concat(comment);
+
+  const updatedBlog = await blog.save();
+
+  updatedBlog
+    ? response.status(200).json(updatedBlog.toJSON())
+    : response.status(404).end();
 });
 
 module.exports = blogRouter;
