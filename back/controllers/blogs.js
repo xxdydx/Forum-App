@@ -128,11 +128,22 @@ blogRouter.put("/:id", async (request, response, next) => {
   }
 });
 blogRouter.post("/:id/comments", async (request, response) => {
-  const { comment } = request.body;
+  const body = request.body;
   const blog = await Blog.findById(request.params.id).populate("user", {
     username: 1,
     name: 1,
   });
+  const token = getTokenFrom(request);
+  const decodedToken = jwt.verify(token, process.env.SECRET);
+  if (!decodedToken.id) {
+    return response.status(401).json({ error: "token missing or invalid" });
+  }
+
+  const user = await User.findById(decodedToken.id);
+  const comment = {
+    content: body.content,
+    user: user._id,
+  };
 
   blog.comments = blog.comments.concat(comment);
 
