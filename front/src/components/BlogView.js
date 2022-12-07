@@ -107,10 +107,16 @@ const BlogView = ({ blog }) => {
                       rel="author"
                       className="text-xl font-bold text-gray-900 dark:text-white"
                     >
-                      u/{blog.user.name ? blog.user.name : user.name}
+                      u/
+                      {blog.user.username}
                     </a>
+                    <p className="mr-4 text-base font-light text-gray-500 dark:text-gray-400">
+                      {blog.likes} {blog.likes === 1 ? "like" : "likes"}{" "}
+                    </p>
                     <p className="text-base font-light text-gray-500 dark:text-gray-400">
-                      {blog.likes} {blog.likes === 1 ? "like" : "likes"}
+                      {" "}
+                      {comments.length}{" "}
+                      {comments.length === 1 ? "comment" : "comments"}
                     </p>
                     <div className="flex flex-wrap items-center gap-2 mt-6">
                       <Button onClick={() => handleUpdateBlog(blog)}>

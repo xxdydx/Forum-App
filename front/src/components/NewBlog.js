@@ -30,7 +30,7 @@ const NewBlog = () => {
   const addNewBlog = async (blogObject) => {
     try {
       const notif1 = {
-        message: `Blog ${blogObject.title} was successfully added`,
+        message: `Blog was successfully added`,
         type: "success",
       };
       dispatch(createBlog(blogObject));
@@ -39,7 +39,7 @@ const NewBlog = () => {
       dispatch(setNotification(notif1, 2500));
     } catch (exception) {
       const notif2 = {
-        message: `Cannot add blog ${blogObject.title}`,
+        message: `Cannot add blog`,
         type: "failure",
       };
       dispatch(setNotification(notif2, 2500));
@@ -74,6 +74,7 @@ const NewBlog = () => {
               <Textarea
                 required={true}
                 value={newContent}
+                placeholder="Text"
                 onChange={({ target }) => setNewContent(target.value)}
                 rows={10}
               />
