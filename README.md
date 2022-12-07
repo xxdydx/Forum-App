@@ -1,6 +1,6 @@
 # Forum App
 
-A simple forum app. This is my first foray into full-stack web development using the MERN stack, as part of my full stack course, Full Stack Open 2022.
+A simple forum app. This is my first foray into full-stack web development using the MERN stack, as part of my full stack course.
 
 ## Features
 
