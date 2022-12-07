@@ -40,7 +40,7 @@ const NewBlog = () => {
     } catch (exception) {
       const notif2 = {
         message: `Cannot add blog ${blogObject.title}`,
-        type: "success",
+        type: "failure",
       };
       dispatch(setNotification(notif2, 2500));
     }
@@ -48,9 +48,9 @@ const NewBlog = () => {
 
   return (
     <>
-      <section class="bg-white dark:bg-gray-900 pb-16  ">
-        <div class="py-12 px-4 mx-auto max-w-2xl lg:py-20 ">
-          <h2 class="mb-4 text-3xl font-black		text-gray-900 dark:text-white ">
+      <section className="bg-white dark:bg-gray-900 pb-16  ">
+        <div className="py-12 px-4 mx-auto max-w-2xl lg:py-20 ">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white ">
             Create New Blog
           </h2>
           <form onSubmit={addBlog} className="flex flex-col gap-4">

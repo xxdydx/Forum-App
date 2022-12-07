@@ -23,6 +23,12 @@ const blogSlice = createSlice({
       const id = action.payload;
       return state.filter((blogs) => blogs.id !== id);
     },
+    comment(state, action) {
+      const updatedBlog = action.payload;
+      return state.map((item) =>
+        item.id === updatedBlog.id ? updatedBlog : item
+      );
+    },
   },
 });
 
@@ -46,7 +52,6 @@ export const updateBlog = (blog) => {
     ...blog,
     likes: blog.likes + 1,
   };
-  console.log(updatedBlog);
   return async (dispatch) => {
     const updatedBlog1 = await blogService.update(updatedBlog);
     dispatch(edit(updatedBlog1));
@@ -57,6 +62,16 @@ export const deleteBlog = (id) => {
   return async (dispatch) => {
     const response = await blogService.remove(id);
     dispatch(remove(id));
+  };
+};
+
+export const commentBlog = (comment, id) => {
+  const formattedComment = {
+    content: comment,
+  };
+  return async (dispatch) => {
+    const response = await blogService.postComment(formattedComment, id);
+    dispatch(edit(response));
   };
 };
 
