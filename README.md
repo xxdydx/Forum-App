@@ -19,13 +19,12 @@ A simple forum app. This is my first foray into full-stack web development using
 
 ### Backend
 
-<img src="https://www.svgrepo.com/show/354118/nodejs.svg" class="ml-2" width="40px" alt="NodeJS">
-<img src="https://www.svgrepo.com/show/373845/mongo.svg" class="ml-2" width="40px" alt="MongoDB">
+<img src="https://www.svgrepo.com/show/354118/nodejs.svg" class="ml-2" width="40px" alt="NodeJS">  <img src="https://www.svgrepo.com/show/373845/mongo.svg" class="ml-2" width="40px" alt="MongoDB">
+
 
 ### Testing
 
-<img src="https://cdn.freebiesupply.com/logos/large/2x/jest-logo-svg-vector.svg" class="ml-2" width="40px" alt="Jest">
-<img src="https://miro.medium.com/max/364/0*JAWNOBEDxJLXxHUj.png" class="ml-2" width="40px" alt="Cypress">
+<img src="https://cdn.freebiesupply.com/logos/large/2x/jest-logo-svg-vector.svg" class="ml-2" width="40px" alt="Jest">  <img src="https://miro.medium.com/max/364/0*JAWNOBEDxJLXxHUj.png" class="ml-2" width="40px" alt="Cypress">
 
 ## Upcoming Features
 
