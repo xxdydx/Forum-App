@@ -22,6 +22,7 @@ import { initializeAllUsers } from "./reducers/allUsersReducer";
 import users from "./services/users";
 import BlogView from "./components/BlogView";
 import UserView from "./components/UserView";
+import ExampleBlog from "./components/ExampleBlog";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -54,7 +55,7 @@ const App = () => {
     : null;
 
   return (
-    <div className="dark  ">
+    <div className="dark">
       <div>
         <div>
           <NavigationBar user={user} />
@@ -74,6 +75,7 @@ const App = () => {
               path="/users/:id"
               element={<UserView userInView={userInView} />}
             />
+            <Route path="/example" element={<ExampleBlog />} />
           </Routes>
         </div>
         <Notif />

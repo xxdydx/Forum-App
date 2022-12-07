@@ -3,11 +3,8 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css?family=Inter');
 
-html { font-family: "Inter", "system-ui"; }
+html { font-family: "Inter", "sans-serif"; }
 
-h2 {
-  color: green;
-}
 
 .font-medium {
   font-weight: 700;
