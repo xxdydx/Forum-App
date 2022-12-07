@@ -22,6 +22,7 @@ const BlogView = ({ blog }) => {
   }
 
   const comments = blog.comments ? blog.comments : [];
+  const user1 = allUsers.find((user) => user.id === blog.user);
 
   const handleUpdateBlog = async (blogObject) => {
     if (!user) {
@@ -108,7 +109,7 @@ const BlogView = ({ blog }) => {
                       className="text-xl font-bold text-gray-900 dark:text-white"
                     >
                       u/
-                      {blog.user.username}
+                      {blog.user.username || user1.username}
                     </a>
                     <p className="mr-4 text-base font-light text-gray-500 dark:text-gray-400">
                       {blog.likes} {blog.likes === 1 ? "like" : "likes"}{" "}

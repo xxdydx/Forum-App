@@ -10,7 +10,7 @@ const BlogList = (user) => {
   const blogs1 = [...blogs];
 
   return (
-    <div className="">
+    <div className="dark">
       <h2>blogs</h2>
 
       <br />
