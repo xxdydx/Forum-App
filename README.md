@@ -13,10 +13,9 @@ A simple forum app. This is my first foray into full-stack web development using
 
 ### Frontend
 
-<img src="https://www.svgrepo.com/show/354259/react.svg"  width="40px" alt="ReactJS">
-<img src="https://www.svgrepo.com/show/354274/redux.svg"  width="40px" alt="Redux">
-<img src="https://www.svgrepo.com/show/354262/react-router.svg"  width="40px" alt="React-Router">
-<img src="https://www.svgrepo.com/show/374118/tailwind.svg"  width="40px" alt="Tailwind CSS">
+<img src="https://www.svgrepo.com/show/354259/react.svg"  width="40px" alt="ReactJS"><img src="https://www.svgrepo.com/show/354274/redux.svg"  width="40px" alt="Redux"><img src="https://www.svgrepo.com/show/354262/react-router.svg"  width="40px" alt="React-Router"><img src="https://www.svgrepo.com/show/374118/tailwind.svg"  width="40px" alt="Tailwind CSS">
+
+
 
 ### Backend
 
