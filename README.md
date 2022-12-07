@@ -29,5 +29,5 @@ A simple forum app. This is my first foray into full-stack web development using
 - Dockerfile and automated CI/CD
 - Markdown support for posts
 - Abilty to like and unlike posts (user-unique likes, it's currently anonymous now)
-- User-based commenting
+- Nested commenting features (quite lazy to do tbh)
 - Better and more secure user authentication
