@@ -13,7 +13,7 @@ A simple forum app. My first foray into full-stack web development using the MER
 
 ### Frontend
 
-<img src="https://www.svgrepo.com/show/354259/react.svg" class="ml-2" width="40px" alt="ReactJS">
+<img src="https://www.svgrepo.com/show/354259/react.svg" width="40px" alt="ReactJS">
 <img src="https://www.svgrepo.com/show/354274/redux.svg" class="ml-2" width="40px" alt="Redux">
 <img src="https://www.svgrepo.com/show/354262/react-router.svg" class="ml-2" width="40px" alt="React-Router">
 <img src="https://www.svgrepo.com/show/374118/tailwind.svg" class="ml-2" width="40px" alt="Tailwind CSS">
