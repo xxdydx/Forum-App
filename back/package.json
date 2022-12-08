@@ -21,8 +21,10 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.8.0",
     "nodemon": "^2.0.20",
     "path": "^0.12.7"
   }
