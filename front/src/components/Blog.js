@@ -55,7 +55,7 @@ const Blog = ({ blog }) => {
       : summary;
 
   return (
-    <Card className="mb-4" href={`/blogs/${blog.id}`}>
+    <Card className="mb-4" href={`/posts/${blog.id}`}>
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {blog.title}
       </h5>

@@ -25,6 +25,7 @@ import UserView from "./components/UserView";
 import ExampleBlog from "./components/ExampleBlog";
 import RegisterUser from "./components/RegisterUser";
 import About from "./components/About";
+import ErrorPage from "./components/ErrorPage";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const App = () => {
     dispatch(initializeAllUsers());
   }, [dispatch]);
 
-  const match = useMatch("/blogs/:id");
+  const match = useMatch("/posts/:id");
   const blog = match ? blogs.find((blog) => blog.id === match.params.id) : null;
   const match1 = useMatch("/users/:id");
   const userInView = match1
@@ -57,7 +58,7 @@ const App = () => {
     : null;
 
   return (
-    <div className="">
+    <div className="dark">
       <div>
         <div>
           <NavigationBar user={user} />
@@ -65,21 +66,22 @@ const App = () => {
           <Routes>
             <Route path="/create" element={<NewBlog />} />
             <Route
-              path="/"
+              path="/posts"
               element={<BlogList user={user} setUser={setUser} />}
             />
             <Route
               path="/login"
               element={user ? <Navigate replace to="/" /> : <SignIn />}
             />
-            <Route path="/blogs/:id" element={<BlogView blog={blog} />} />
+            <Route path="/posts/:id" element={<BlogView blog={blog} />} />
             <Route
               path="/users/:id"
               element={<UserView userInView={userInView} />}
             />
             <Route path="/example" element={<ExampleBlog />} />
             <Route path="/register" element={<RegisterUser />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/" element={<About />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
         <Notif />

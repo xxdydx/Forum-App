@@ -38,11 +38,10 @@ const NavigationBar = ({ user }) => {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link href="/about">About</Navbar.Link>
+        <Navbar.Link href="/posts">Posts</Navbar.Link>
         {user === null && <Navbar.Link href="/login">Create Post</Navbar.Link>}
         {user && <Navbar.Link href="/create">Create Post</Navbar.Link>}
 
-        <Navbar.Link href="/blogs">Other Blogs</Navbar.Link>
         {user === null && (
           <Navbar.Link className="font-bold dark:text-sky-400" href="/login">
             Log In
