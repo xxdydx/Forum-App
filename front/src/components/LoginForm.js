@@ -35,7 +35,7 @@ const SignIn = () => {
       const user = await loginService.login({ username, password });
       window.localStorage.setItem("AKAppSessionID", JSON.stringify(user));
       blogService.setToken(user.token);
-      navigate("/");
+      navigate("/posts");
       dispatch(setUser(user));
     } catch (exception) {
       const notif = {

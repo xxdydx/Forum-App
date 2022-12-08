@@ -34,7 +34,7 @@ const NewBlog = () => {
         type: "success",
       };
       await dispatch(createBlog(blogObject));
-      navigate("/");
+      navigate("/posts");
 
       dispatch(setNotification(notif1, 2500));
     } catch (exception) {

@@ -51,7 +51,7 @@ const BlogView = ({ blog }) => {
           type: "success",
         };
         dispatch(setNotification(notif, 2500));
-        navigate("/");
+        navigate("/posts");
       } catch (error) {
         const notif = {
           message: error.message,

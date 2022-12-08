@@ -29,7 +29,10 @@ const NavigationBar = ({ user }) => {
   };
 
   return (
-    <Navbar fluid={true}>
+    <Navbar
+      className="px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700"
+      fluid={true}
+    >
       <Navbar.Brand href="/">
         <ForumIcon className="mr-3 h-6 sm:h-9 dark:fill-white	" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
@@ -39,6 +42,7 @@ const NavigationBar = ({ user }) => {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <Navbar.Link href="/posts">Posts</Navbar.Link>
+
         {user === null && <Navbar.Link href="/login">Create Post</Navbar.Link>}
         {user && <Navbar.Link href="/create">Create Post</Navbar.Link>}
 
@@ -48,13 +52,20 @@ const NavigationBar = ({ user }) => {
           </Navbar.Link>
         )}
         {user && (
-          <Navbar.Link
-            className="font-bold dark:text-sky-400"
-            onClick={logout}
-            href=""
-          >
-            Log Out
-          </Navbar.Link>
+          <div style={{ color: "#38BDF8" }}>
+            <Navbar.Link className="font-medium dark:text-sky-400">
+              <Dropdown label={`u/${user.username}`} inline={true}>
+                <a href={`/users/${user.username}`}>
+                  <div>
+                    <Dropdown.Item>My Profile</Dropdown.Item>
+                  </div>
+                </a>
+                <div onClick={logout}>
+                  <Dropdown.Item>Sign out</Dropdown.Item>
+                </div>
+              </Dropdown>
+            </Navbar.Link>
+          </div>
         )}
       </Navbar.Collapse>
     </Navbar>
