@@ -27,6 +27,8 @@ A simple forum app. This is my first foray into full-stack web development using
 
 <img src='https://raw.githubusercontent.com/xxdydx/forum-app/main/images/blogList.png' width='800' height='467'>
 <img src= 'https://raw.githubusercontent.com/xxdydx/forum-app/main/images/blogView.png' width='800' height='467'>
+<img src= 'https://raw.githubusercontent.com/xxdydx/forum-app/main/images/commenting.png' width='800' height='436'>
+<img src= 'https://raw.githubusercontent.com/xxdydx/forum-app/main/images/createPost.png' width='800'>
 
 ## Upcoming Features
 
