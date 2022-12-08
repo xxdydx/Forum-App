@@ -104,7 +104,10 @@ const BlogView = ({ blog }) => {
                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                   <div>
                     <a
-                      href="#"
+                      href={
+                        `/users/${blog.user.username}` ||
+                        `/users/${user1.username}`
+                      }
                       rel="author"
                       className="text-xl font-bold text-gray-900 dark:text-white"
                     >
@@ -142,7 +145,9 @@ const BlogView = ({ blog }) => {
                 </div>
               </address>
             </header>
-            <p className="text-gray-500 dark:text-gray-400">{blog.content}</p>
+            <p className="text-gray-500 dark:text-gray-400" align="justify">
+              {blog.content}
+            </p>
 
             <section className="not-format">
               <div className="flex justify-between items-center mt-8 mb-6">

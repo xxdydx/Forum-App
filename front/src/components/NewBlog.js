@@ -49,7 +49,7 @@ const NewBlog = () => {
   return (
     <>
       <div className="dark">
-        <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 min-h-screen">
+        <main className="pt-8 pb-16 lg:pt-16 lg:pb-12 bg-white dark:bg-gray-900 min-h-screen">
           <div className="flex justify-between px-4 mx-auto max-w-6xl ">
             <article className="mx-auto w-full max-w-6xl	 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
               <header className="mb-4 lg:mb-6 not-format">
@@ -97,7 +97,9 @@ const NewBlog = () => {
                   />
                 </div>
 
-                <Button type="submit">Submit</Button>
+                <Button className="mt-4 w-1/12" type="submit">
+                  Submit
+                </Button>
               </form>
             </article>
           </div>

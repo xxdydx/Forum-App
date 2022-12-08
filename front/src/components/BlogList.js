@@ -25,9 +25,7 @@ const BlogList = (user) => {
             {blogs1.length > 0 ? (
               blogs1
                 .sort((a, b) => (a.likes > b.likes ? -1 : 1))
-                .map((blog) => (
-                  <Blog key={blog.id} blog={blog} blogs={blogs} user={user} />
-                ))
+                .map((blog) => <Blog key={blog.id} blog={blog} />)
             ) : (
               <article className="p-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                 <footer className="flex justify-between items-center"></footer>

@@ -11,15 +11,11 @@ const Blog = ({ blog }) => {
   const user = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state.blogs);
-  const [view, setView] = useState(false);
-  const buttonText = view ? "hide" : "view";
-  const blogStyle = {
-    paddingTop: 10,
-    paddingLeft: 2,
-    border: "solid",
-    borderWidth: 1,
-    marginBottom: 5,
-  };
+  console.log(blog);
+  if (blog === undefined) {
+    return null;
+  }
+  const comments = blog.comments ? blog.comments : [];
 
   const handleUpdateBlog = async (blogObject) => {
     try {
@@ -53,10 +49,10 @@ const Blog = ({ blog }) => {
     }
   };
   var summary = blog.content.substring(0, 130);
-  summary = summary.substr(
-    0,
-    Math.min(summary.length, summary.lastIndexOf(" "))
-  );
+  summary =
+    summary.length === 130
+      ? summary.substr(0, Math.min(summary.length, summary.lastIndexOf(" ")))
+      : summary;
 
   return (
     <Card className="mb-4" href={`/blogs/${blog.id}`}>
@@ -71,7 +67,7 @@ const Blog = ({ blog }) => {
         </div>
         <div className="text-gray-900 dark:text-white">
           <CommentIcon className="mr-2" />
-          {blog.comments.length}
+          {comments.length}
         </div>
       </div>
     </Card>

@@ -52,7 +52,7 @@ const App = () => {
   const blog = match ? blogs.find((blog) => blog.id === match.params.id) : null;
   const match1 = useMatch("/users/:id");
   const userInView = match1
-    ? allUsers.find((user) => user.id === match1.params.id)
+    ? allUsers.find((user) => user.username === match1.params.id)
     : null;
 
   return (

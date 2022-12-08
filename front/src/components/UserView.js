@@ -1,6 +1,7 @@
 import { Spinner, Footer } from "flowbite-react";
 import blogReducer from "../reducers/blogReducer";
 import users from "../services/users";
+import Blog from "./Blog";
 
 const UserView = ({ userInView }) => {
   if (userInView === undefined) {
@@ -22,13 +23,9 @@ const UserView = ({ userInView }) => {
         <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
           Posts added by {userInView.name}
         </h2>
-        <ul class="space-y-1 max-w-md list-disc list-inside text-gray-500 dark:text-gray-400">
-          {userInView.blogs.map((blog) => (
-            <li key={blog.id}>
-              <a href={`/blogs/${blog.id}`}>{blog.title}</a>
-            </li>
-          ))}
-        </ul>
+        {userInView.blogs.map((blog) => (
+          <Blog key={blog.id} blog={blog} />
+        ))}
       </div>
     </section>
   );
