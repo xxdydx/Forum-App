@@ -23,6 +23,11 @@ A simple forum app. This is my first foray into full-stack web development using
 
 <img src="https://cdn.freebiesupply.com/logos/large/2x/jest-logo-svg-vector.svg" class="ml-2" width="40px" alt="Jest"> <img src="https://miro.medium.com/max/364/0*JAWNOBEDxJLXxHUj.png" class="ml-2" width="40px" alt="Cypress">
 
+## Screenshots
+
+<img src='https://raw.githubusercontent.com/xxdydx/forum-app/main/images/blogList.png' width='600' height='350'>
+<img src= 'https://raw.githubusercontent.com/xxdydx/forum-app/main/images/blogView.png' width='600' height='350'>
+
 ## Upcoming Features
 
 - Fix up some user interfaces (I have trouble with CSS :/)
