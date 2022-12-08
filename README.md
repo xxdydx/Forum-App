@@ -9,7 +9,7 @@ A simple forum app. This is my first foray into full-stack web development using
 - User authentication using JSON Web Token
 - Clean and usable UI
 
-## Stack and Framework used
+## Stack and Frameworks used
 
 ### Frontend
 
