@@ -16,6 +16,7 @@ import { setUser } from "../reducers/userReducer";
 import { Add } from "@mui/icons-material";
 import LoginModal from "./LoginModal";
 import { useNavigate } from "react-router-dom";
+import ForumIcon from "@mui/icons-material/Forum";
 
 const NavigationBar = ({ user }) => {
   const dispatch = useDispatch();
@@ -30,13 +31,9 @@ const NavigationBar = ({ user }) => {
   return (
     <Navbar fluid={true}>
       <Navbar.Brand href="/">
-        <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          className="mr-3 h-6 sm:h-9"
-          alt="Flowbite Logo"
-        />
+        <ForumIcon className="mr-3 h-6 sm:h-9 dark:fill-white	" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Blogger
+          Forum App
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />
@@ -47,7 +44,7 @@ const NavigationBar = ({ user }) => {
 
         <Navbar.Link href="/blogs">Other Blogs</Navbar.Link>
         {user === null && (
-          <Navbar.Link className="font-bold dark:text-white" href="/login">
+          <Navbar.Link className="font-bold dark:text-sky-400" href="/login">
             Log In
           </Navbar.Link>
         )}

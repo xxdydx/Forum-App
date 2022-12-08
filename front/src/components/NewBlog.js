@@ -48,54 +48,62 @@ const NewBlog = () => {
 
   return (
     <>
-      <section className="bg-white dark:bg-gray-900 pb-16  ">
-        <div className="py-12 px-4 mx-auto max-w-2xl lg:py-20 ">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white ">
-            Create New Blog
-          </h2>
-          <form onSubmit={addBlog} className="flex flex-col gap-4">
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="post-title" value="Title of Post" />
-              </div>
-              <TextInput
-                id="post-title"
-                type="text"
-                placeholder="An Amazing Post"
-                required={true}
-                value={newTitle}
-                onChange={({ target }) => setNewTitle(target.value)}
-              />
-            </div>
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="post-content" value="Content of Post" />
-              </div>
-              <Textarea
-                required={true}
-                value={newContent}
-                placeholder="Text"
-                onChange={({ target }) => setNewContent(target.value)}
-                rows={10}
-              />
-            </div>
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="post-url" value="URL of Post" />
-              </div>
-              <TextInput
-                id="post-url"
-                type="url"
-                required={true}
-                value={newUrl}
-                onChange={({ target }) => setNewUrl(target.value)}
-              />
-            </div>
+      <div className="dark">
+        <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 min-h-screen">
+          <div className="flex justify-between px-4 mx-auto max-w-6xl ">
+            <article className="mx-auto w-full max-w-6xl	 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+              <header className="mb-4 lg:mb-6 not-format">
+                <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                  Create a Post
+                </h1>
+                <address className="flex items-center mb-6 not-italic"></address>
+              </header>
+              <form onSubmit={addBlog} className="flex flex-col gap-4">
+                <div>
+                  <div className="mb-2 block">
+                    <Label htmlFor="post-title" value="Title of Post" />
+                  </div>
+                  <TextInput
+                    id="post-title"
+                    type="text"
+                    placeholder="An Amazing Post"
+                    required={true}
+                    value={newTitle}
+                    onChange={({ target }) => setNewTitle(target.value)}
+                  />
+                </div>
+                <div>
+                  <div className="mb-2 block">
+                    <Label htmlFor="post-content" value="Content of Post" />
+                  </div>
+                  <Textarea
+                    required={true}
+                    value={newContent}
+                    placeholder="Text"
+                    onChange={({ target }) => setNewContent(target.value)}
+                    rows={10}
+                  />
+                </div>
+                <div>
+                  <div className="mb-2 block">
+                    <Label htmlFor="post-url" value="URL of Post" />
+                  </div>
+                  <TextInput
+                    id="post-url"
+                    type="url"
+                    required={true}
+                    value={newUrl}
+                    onChange={({ target }) => setNewUrl(target.value)}
+                  />
+                </div>
 
-            <Button type="submit">Submit</Button>
-          </form>
-        </div>
-      </section>
+                <Button type="submit">Submit</Button>
+              </form>
+            </article>
+          </div>
+        </main>
+      </div>
+
       <BlogFooter />
     </>
   );

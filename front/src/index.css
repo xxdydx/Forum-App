@@ -3,13 +3,12 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-html { font-family: 'Inter', sans-serif;
+html { font-family: 'Inter', sans-serif; outline: 1px solid red;
 }
 
+  
 
-.font-medium {
-  font-weight: 700;
-}
+
 
 
 

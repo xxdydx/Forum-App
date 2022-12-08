@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { setNotification } from "../reducers/notificationReducer";
 import { updateBlog, deleteBlog } from "../reducers/blogReducer";
 import { Link } from "react-router-dom";
+import { Card } from "flowbite-react";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import CommentIcon from "@mui/icons-material/Comment";
 
 const Blog = ({ blog }) => {
   const user = useSelector((state) => state.users);
@@ -49,25 +52,29 @@ const Blog = ({ blog }) => {
       }
     }
   };
+  var summary = blog.content.substring(0, 130);
+  summary = summary.substr(
+    0,
+    Math.min(summary.length, summary.lastIndexOf(" "))
+  );
 
   return (
-    <div style={blogStyle}>
-      <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>{" "}
-      <button onClick={() => setView(!view)}>{buttonText}</button>
-      {view ? (
-        <div>
-          <a href={`//${blog.url}`} target="_blank">
-            link
-          </a>{" "}
-          <br />
-          likes {blog.likes}{" "}
-          <button onClick={() => handleUpdateBlog(blog)}>like</button> <br />
-          {user && (user.id === blog.user.id || user.id === blog.user) ? (
-            <button onClick={() => handleDeleteBlog(blog.id)}>remove</button>
-          ) : null}
+    <Card className="mb-4" href={`/blogs/${blog.id}`}>
+      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        {blog.title}
+      </h5>
+      <p className="font-normal text-gray-700 dark:text-gray-400">{summary}</p>
+      <div className="items-center justify-left space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+        <div className="text-gray-900 dark:text-white">
+          <FavoriteIcon className="mr-2" />
+          {blog.likes}
         </div>
-      ) : null}
-    </div>
+        <div className="text-gray-900 dark:text-white">
+          <CommentIcon className="mr-2" />
+          {blog.comments.length}
+        </div>
+      </div>
+    </Card>
   );
 };
 export default Blog;
