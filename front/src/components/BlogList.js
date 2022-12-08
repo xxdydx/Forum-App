@@ -17,7 +17,7 @@ const BlogList = (user) => {
         <div className="flex justify-between px-4 mx-auto max-w-6xl ">
           <article className="mx-auto w-full max-w-6xl	 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
             <header className="mb-4 lg:mb-6 not-format">
-              <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+              <h1 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
                 Posts
               </h1>
               <address className="flex items-center mb-6 not-italic"></address>
