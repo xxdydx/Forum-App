@@ -62,7 +62,7 @@ const Blog = ({ blog }) => {
       <p className="font-normal text-gray-700 dark:text-gray-400">{summary}</p>
       <div className="items-center justify-left space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
         <div className="text-gray-900 dark:text-white">
-          <FavoriteIcon className="mr-2" />
+          <FavoriteIcon className="mr-2 fill-red-500" />
           {blog.likes}
         </div>
         <div className="text-gray-900 dark:text-white">
