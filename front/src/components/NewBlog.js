@@ -33,7 +33,7 @@ const NewBlog = () => {
         message: `Blog was successfully added`,
         type: "success",
       };
-      dispatch(createBlog(blogObject));
+      await dispatch(createBlog(blogObject));
       navigate("/");
 
       dispatch(setNotification(notif1, 2500));

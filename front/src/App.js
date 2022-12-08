@@ -23,6 +23,7 @@ import users from "./services/users";
 import BlogView from "./components/BlogView";
 import UserView from "./components/UserView";
 import ExampleBlog from "./components/ExampleBlog";
+import RegisterUser from "./components/RegisterUser";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -76,6 +77,7 @@ const App = () => {
               element={<UserView userInView={userInView} />}
             />
             <Route path="/example" element={<ExampleBlog />} />
+            <Route path="/register" element={<RegisterUser />} />
           </Routes>
         </div>
         <Notif />
