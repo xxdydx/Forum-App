@@ -97,7 +97,7 @@ const NewBlog = () => {
                   />
                 </div>
 
-                <Button className="mt-4 w-1/12" type="submit">
+                <Button className="mt-4 w-24	" type="submit">
                   Submit
                 </Button>
               </form>
