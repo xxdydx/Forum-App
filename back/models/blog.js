@@ -17,7 +17,7 @@ commentSchema.set("toJSON", {
 const blogSchema = new mongoose.Schema({
   title: String,
   content: String,
-  url: String,
+  dateCreated: Date,
   likes: Number,
   comments: [commentSchema],
   user: {

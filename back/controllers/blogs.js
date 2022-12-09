@@ -42,18 +42,13 @@ blogRouter.post("/", async (request, response, next) => {
       error: "title is required",
     });
   }
-  if (!body.url) {
-    return response.status(400).json({
-      error: "url is required",
-    });
-  }
 
   const user = await User.findById(decodedToken.id);
 
   const blog = new Blog({
     title: body.title,
     content: body.content,
-    url: body.url,
+    dateCreated: body.dateCreated,
     likes: body.likes,
     comments: body.comments,
     user: user._id,
@@ -105,16 +100,11 @@ blogRouter.put("/:id", async (request, response, next) => {
       error: "title is required",
     });
   }
-  if (!body.url) {
-    return response.status(400).json({
-      error: "url is required",
-    });
-  }
 
   const blog = {
     title: body.title,
     content: body.content,
-    url: body.url,
+    dateCreated: body.dateCreated,
     likes: body.likes,
     comments: body.comments,
   };

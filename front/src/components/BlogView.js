@@ -112,11 +112,14 @@ const BlogView = ({ blog }) => {
                       u/
                       {blog.user.username || user1.username}
                     </a>
-                    <p className="mr-4 text-base font-light text-gray-500 dark:text-gray-400">
-                      {blog.likes} {blog.likes === 1 ? "like" : "likes"}{" "}
-                    </p>
                     <p className="text-base font-light text-gray-500 dark:text-gray-400">
-                      {" "}
+                      Posted on{" "}
+                      {new Date(blog.dateCreated).toLocaleDateString()}
+                    </p>
+                    <p className="inline mr-2 text-base font-light text-gray-500 dark:text-gray-400">
+                      {blog.likes} {blog.likes === 1 ? "like" : "likes"}
+                    </p>{" "}
+                    <p className="inline  text-base font-light text-gray-500 dark:text-gray-400">
                       {comments.length}{" "}
                       {comments.length === 1 ? "comment" : "comments"}
                     </p>

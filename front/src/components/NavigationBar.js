@@ -56,7 +56,7 @@ const NavigationBar = ({ user, handleThemeSwitch, theme }) => {
         )}
         {user && (
           <div style={{ color: "#38BDF8" }}>
-            <Navbar.Link className="font-bold text-violet-800	dark:text-sky-400">
+            <Navbar.Link className="font-medium text-violet-800	dark:text-sky-400">
               <Dropdown label={`u/${user.username}`} inline={true}>
                 <a href={`/users/${user.username}`}>
                   <div>
@@ -97,10 +97,10 @@ const NavigationBar = ({ user, handleThemeSwitch, theme }) => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="#000"
+                  fill="#6B7280"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
-                  stroke="#000"
+                  stroke="#6B7280"
                   class="w-6 h-6"
                 >
                   <path
