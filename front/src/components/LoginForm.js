@@ -30,13 +30,12 @@ const SignIn = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-
     try {
       const user = await loginService.login({ username, password });
       window.localStorage.setItem("AKAppSessionID", JSON.stringify(user));
       blogService.setToken(user.token);
-      navigate("/posts");
       dispatch(setUser(user));
+      navigate("/posts");
     } catch (exception) {
       const notif = {
         message: "Wrong credentials",
