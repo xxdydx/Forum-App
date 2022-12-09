@@ -8,6 +8,7 @@ import { updateBlog, deleteBlog, commentBlog } from "../reducers/blogReducer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BlogFooter from "./BlogFooter";
+import ErrorPage from "./ErrorPage";
 import Comment from "./Comment";
 
 const BlogView = ({ blog }) => {
@@ -18,7 +19,7 @@ const BlogView = ({ blog }) => {
   const navigate = useNavigate();
   const blogs = useSelector((state) => state.blogs);
   if (blog === undefined) {
-    return <Spinner aria-label="Default status example" />;
+    return <ErrorPage />;
   }
 
   const comments = blog.comments ? blog.comments : [];
@@ -88,9 +89,6 @@ const BlogView = ({ blog }) => {
     }
   };
 
-  if (blog === undefined) {
-    return <Spinner aria-label="Default status example" />;
-  }
   return (
     <div className="">
       <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
