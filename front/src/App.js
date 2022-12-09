@@ -33,6 +33,7 @@ const App = () => {
   const user = useSelector((state) => state.users);
   const blogs = useSelector((state) => state.blogs);
   const allUsers = useSelector((state) => state.allUsers);
+  const [theme, setTheme] = useState(true);
 
   const padding = {
     padding: 5,
@@ -57,11 +58,20 @@ const App = () => {
     ? allUsers.find((user) => user.username === match1.params.id)
     : null;
 
+  const handleThemeSwitch = (event) => {
+    event.preventDefault();
+    setTheme(!theme);
+  };
+
   return (
-    <div className="dark">
+    <div className={theme ? "dark" : ""}>
       <div>
         <div>
-          <NavigationBar user={user} />
+          <NavigationBar
+            user={user}
+            handleThemeSwitch={handleThemeSwitch}
+            theme={theme}
+          />
 
           <Routes>
             <Route path="/create" element={<NewBlog />} />
