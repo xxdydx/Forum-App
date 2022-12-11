@@ -26,6 +26,7 @@ import ExampleBlog from "./components/ExampleBlog";
 import RegisterUser from "./components/RegisterUser";
 import About from "./components/About";
 import ErrorPage from "./components/ErrorPage";
+import BlogEdit from "./components/BlogEdit";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,11 @@ const App = () => {
   const user = useSelector((state) => state.users);
   const blogs = useSelector((state) => state.blogs);
   const allUsers = useSelector((state) => state.allUsers);
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("color-theme")
+      ? JSON.parse(localStorage.getItem("color-theme"))
+      : true
+  );
 
   const padding = {
     padding: 5,
@@ -53,6 +58,11 @@ const App = () => {
 
   const match = useMatch("/posts/:id");
   const blog = match ? blogs.find((blog) => blog.id === match.params.id) : null;
+  const match2 = useMatch("/posts/edit/:id");
+  const blog1 = match2
+    ? blogs.find((blog) => blog.id === match2.params.id)
+    : null;
+
   const match1 = useMatch("/users/:id");
   const userInView = match1
     ? allUsers.find((user) => user.username === match1.params.id)
@@ -61,6 +71,7 @@ const App = () => {
   const handleThemeSwitch = (event) => {
     event.preventDefault();
     setTheme(!theme);
+    localStorage.setItem("color-theme", JSON.stringify(!theme));
   };
 
   return (
@@ -92,6 +103,7 @@ const App = () => {
             <Route path="/register" element={<RegisterUser />} />
             <Route path="/" element={<About />} />
             <Route path="*" element={<ErrorPage />} />
+            <Route path="/posts/edit/:id" element={<BlogEdit blog={blog1} />} />
           </Routes>
         </div>
         <Notif />

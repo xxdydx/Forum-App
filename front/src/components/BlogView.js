@@ -12,6 +12,7 @@ import ErrorPage from "./ErrorPage";
 import Comment from "./Comment";
 
 const BlogView = ({ blog }) => {
+  console.log(blog);
   const user = useSelector((state) => state.users);
   const allUsers = useSelector((state) => state.allUsers);
   const [newComment, setNewComment] = useState("");
@@ -19,7 +20,7 @@ const BlogView = ({ blog }) => {
   const navigate = useNavigate();
   const blogs = useSelector((state) => state.blogs);
   if (blog === undefined) {
-    return <ErrorPage />;
+    return <Spinner />;
   }
 
   const comments = blog.comments ? blog.comments : [];
@@ -30,7 +31,11 @@ const BlogView = ({ blog }) => {
       navigate("/login");
     }
     try {
-      await dispatch(updateBlog(blogObject));
+      const updatedBlog = {
+        ...blogObject,
+        likes: blog.likes + 1,
+      };
+      await dispatch(updateBlog(updatedBlog));
     } catch (error) {
       const notif = {
         message: error.response.data.error,
@@ -107,7 +112,7 @@ const BlogView = ({ blog }) => {
                         `/users/${user1.username}`
                       }
                       rel="author"
-                      className="text-xl font-bold text-gray-900 dark:text-white"
+                      className="text-lg font-bold text-gray-900 dark:text-white"
                     >
                       u/
                       {blog.user.username || user1.username}
@@ -116,10 +121,10 @@ const BlogView = ({ blog }) => {
                       Posted on{" "}
                       {new Date(blog.dateCreated).toLocaleDateString()}
                     </p>
-                    <p className="inline mr-2 text-base font-light text-gray-500 dark:text-gray-400">
+                    <p className="inline mr-2 text-sm font-light text-gray-500 dark:text-gray-400">
                       {blog.likes} {blog.likes === 1 ? "like" : "likes"}
                     </p>{" "}
-                    <p className="inline  text-base font-light text-gray-500 dark:text-gray-400">
+                    <p className="inline  text-sm font-light text-gray-500 dark:text-gray-400">
                       {comments.length}{" "}
                       {comments.length === 1 ? "comment" : "comments"}
                     </p>
@@ -130,7 +135,10 @@ const BlogView = ({ blog }) => {
                       {user &&
                       (user.id === blog.user.id || user.id === blog.user) ? (
                         <>
-                          <Button color="warning">
+                          <Button
+                            href={`/posts/edit/${blog.id}`}
+                            color="warning"
+                          >
                             <EditIcon className="h-6 w-6" />
                           </Button>
                           <Button
@@ -146,7 +154,10 @@ const BlogView = ({ blog }) => {
                 </div>
               </address>
             </header>
-            <p className="text-gray-500 dark:text-gray-400" align="justify">
+            <p
+              className="text-gray-500 text-lg dark:text-gray-400"
+              align="justify"
+            >
               {blog.content}
             </p>
 

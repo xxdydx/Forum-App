@@ -7,7 +7,7 @@ import NewBlog from "./NewBlog";
 import BlogFooter from "./BlogFooter";
 import { Card } from "flowbite-react";
 
-const BlogList = (user) => {
+const BlogList = () => {
   const blogs = useSelector((state) => state.blogs);
   const blogs1 = [...blogs];
 
