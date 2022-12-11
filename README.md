@@ -38,7 +38,7 @@ It's an easy process.
 4. 'cd back`
 5. Set your MongoDB database link and port (3003 by default) variables under the .env file
 6. `npm install`
-7. 'npm start`
+7. `npm start`
 
 There you go! Hopefully I find time to make a Dockerfile for this lol.
 
