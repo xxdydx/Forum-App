@@ -35,7 +35,7 @@ It's an easy process.
 1. Install NodeJS and the NPM package manager.
 2. Get your own MongoDB database (you can get one for free at MongoDB Atlas or you can set up one locally)
 3. Clone this git repository
-4. 'cd back`
+4. `cd back`
 5. Set your MongoDB database link and port (3003 by default) variables under the .env file
 6. `npm install`
 7. `npm start`
