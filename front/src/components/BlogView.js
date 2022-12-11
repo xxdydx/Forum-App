@@ -119,7 +119,7 @@ const BlogView = ({ blog }) => {
                     </a>
                     <p className="text-base font-light text-gray-500 dark:text-gray-400">
                       Posted on{" "}
-                      {new Date(blog.dateCreated).toLocaleDateString()}
+                      {new Date(blog.dateCreated).toLocaleDateString("en-GB")}
                     </p>
                     <p className="inline mr-2 text-sm font-light text-gray-500 dark:text-gray-400">
                       {blog.likes} {blog.likes === 1 ? "like" : "likes"}

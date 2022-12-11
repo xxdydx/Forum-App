@@ -47,7 +47,7 @@ const SignIn = () => {
 
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900">
         <div className="flex flex-col items-center justify-center pt-36 pb-44">
           <a
             href="#"
