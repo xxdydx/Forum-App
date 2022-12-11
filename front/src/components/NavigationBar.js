@@ -14,7 +14,6 @@ import {
 import { useDispatch } from "react-redux";
 import { setUser } from "../reducers/userReducer";
 import { Add } from "@mui/icons-material";
-import LoginModal from "./LoginModal";
 import { useNavigate } from "react-router-dom";
 import ForumIcon from "@mui/icons-material/Forum";
 import { DarkThemeToggle } from "flowbite-react";

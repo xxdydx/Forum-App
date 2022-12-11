@@ -47,11 +47,7 @@ export const createBlog = (blog) => {
   };
 };
 
-export const updateBlog = (blog) => {
-  const updatedBlog = {
-    ...blog,
-    likes: blog.likes + 1,
-  };
+export const updateBlog = (updatedBlog) => {
   return async (dispatch) => {
     const updatedBlog1 = await blogService.update(updatedBlog);
     dispatch(edit(updatedBlog1));
