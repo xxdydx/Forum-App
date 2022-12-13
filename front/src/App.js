@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Notif from "./components/Notif";
 import SignIn from "./components/LoginForm";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,17 +9,12 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
   useMatch,
-  useParams,
-  useNavigate,
 } from "react-router-dom";
 import NewBlog from "./components/NewBlog";
 import NavigationBar from "./components/NavigationBar";
-import Login from "./services/login";
 import { Navigate } from "react-router-dom";
 import { initializeAllUsers } from "./reducers/allUsersReducer";
-import users from "./services/users";
 import BlogView from "./components/BlogView";
 import UserView from "./components/UserView";
 import ExampleBlog from "./components/ExampleBlog";

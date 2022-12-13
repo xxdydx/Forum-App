@@ -8,7 +8,6 @@ import { updateBlog, deleteBlog, commentBlog } from "../reducers/blogReducer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BlogFooter from "./BlogFooter";
-import ErrorPage from "./ErrorPage";
 import Comment from "./Comment";
 
 const BlogView = ({ blog }) => {
