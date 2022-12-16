@@ -35,10 +35,6 @@ const App = () => {
       : true
   );
 
-  const padding = {
-    padding: 5,
-  };
-
   useEffect(() => {
     dispatch(initializeBlogs());
   }, [dispatch]);
