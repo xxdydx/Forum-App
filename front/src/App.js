@@ -78,7 +78,7 @@ const App = () => {
           <Routes>
             <Route path="/create" element={<NewBlog />} />
             <Route
-              path="/posts"
+              path="/"
               element={<BlogList user={user} setUser={setUser} />}
             />
             <Route
@@ -92,7 +92,7 @@ const App = () => {
             />
             <Route path="/example" element={<ExampleBlog />} />
             <Route path="/register" element={<RegisterUser />} />
-            <Route path="/" element={<About />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<ErrorPage />} />
             <Route path="/posts/edit/:id" element={<BlogEdit blog={blog1} />} />
           </Routes>

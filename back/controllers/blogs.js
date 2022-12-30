@@ -117,6 +117,7 @@ blogRouter.put("/:id", async (request, response, next) => {
     next(exception);
   }
 });
+
 blogRouter.post("/:id/comments", async (request, response) => {
   const body = request.body;
   const blog = await Blog.findById(request.params.id).populate("user", {

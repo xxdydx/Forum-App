@@ -43,7 +43,7 @@ const NavigationBar = ({ user, handleThemeSwitch, theme }) => {
       </Navbar.Brand>
       <Navbar.Toggle className="justify-left" />
       <Navbar.Collapse>
-        <Navbar.Link href="/posts">Posts</Navbar.Link>
+        <Navbar.Link href="/about">About this App</Navbar.Link>
 
         {user === null && <Navbar.Link href="/login">Create Post</Navbar.Link>}
         {user && <Navbar.Link href="/create">Create Post</Navbar.Link>}
